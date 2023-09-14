@@ -8,6 +8,12 @@ Afficher une fenètre modale contenant un message d'information à destination d
 
 Une fenêtre modale est, dans une interface graphique, une fenêtre qui prend le contrôle total du clavier et de l'écran. Elle est en général associée à un message d'informaiton, une question à laquelle il est impératif que l'utilisateur réponde avant de poursuivre, ou de modifier quoi que ce soit. (Source : [Wikipedia](https://fr.wikipedia.org/wiki/Fen%C3%AAtre_modale))
 
+## Pré-requis
+
+- Node.js v18.12.0
+- Npm 9.6.7
+- React 18.2.0
+
 ## Technologies utilisées
 
 - [HTML 5](https://developer.mozilla.org/fr/docs/Glossary/HTML5)
@@ -20,13 +26,13 @@ Une fenêtre modale est, dans une interface graphique, une fenêtre qui prend le
 Dans un terminal :
 
 ```
-npm install XXX
+npm i modale_by_barberousse
 ```
 
 ou
 
 ```
-yarn add XXX
+yarn add modale_by_barberousse
 ```
 
 ## Utilisation
@@ -36,7 +42,7 @@ yarn add XXX
 Importer le composant 'Modal' :
 
 ```javascript
-import Modal from "XXX"
+import Modal from "modale_by_barberousse"
 ```
 
 Dans la fonction par elle-même, initialiser le state gérant l'état de la fenêtre modale :

@@ -1,7 +1,7 @@
 {
   "name": "modale_by_barberousse",
   "private": false,
-  "version": "0.0.6",
+  "version": "0.0.8",
   "type": "module",
   "description": "Fenêtre modale developpée pour le projet 14 du parcours OPENCLASSROOMS 'Développeur d'application javascript REACT",
   "main": "./dist/Modale.umd.js",
@@ -11,6 +11,21 @@
       "import": "./dist/Modale.es.js",
       "require": "./dist/Modale.umd.js"
     }
+  },
+  "author": "Alain BOUCHERY",
+  "keywords": [
+    "modal",
+    "component",
+    "react",
+    "openclassrooms"
+  ],
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Barberousse93/OC_P14_modale.git"
   },
   "scripts": {
     "dev": "vite",
@@ -32,5 +47,8 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "vite": "^4.4.5"
+  },
+  "parserOptions": {
+    "sourceType": "module"
   }
 }
