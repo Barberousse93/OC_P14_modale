@@ -1,10 +1,17 @@
 {
   "name": "modale_by_barberousse",
   "private": false,
-  "version": "0.0.5",
+  "version": "0.0.6",
   "type": "module",
   "description": "Fenêtre modale developpée pour le projet 14 du parcours OPENCLASSROOMS 'Développeur d'application javascript REACT",
-  "main": "dist/assets/index-52f43000.js",
+  "main": "./dist/Modale.umd.js",
+  "module": "./dist/Modale.es.js",
+  "export": {
+    ".": {
+      "import": "./dist/Modale.es.js",
+      "require": "./dist/Modale.umd.js"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -12,6 +19,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "modale_by_barberousse": "^0.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
