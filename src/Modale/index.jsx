@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react"
-import "./index.css"
+import "./style.css"
 
 function Modal(props) {
   const [buttonColor, setButtonColor] = useState("#f00")
