@@ -1,6 +1,48 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react"
-import "./style.css"
+import { styled } from "styled-components"
+
+const StyledOverlay = styled.div`
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+`
+
+const StyledModale = styled.div`position: relative;
+  background-color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+}`
+
+const StyledButton = styled.button`
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  top: -25px;
+  right: -25px;
+  box-shadow: inset -5px -5px 5px rgba(0, 0, 0, 0.5),
+    inset 5px 5px 5px rgba(255, 255, 255, 0.5);
+  transition: all 0.3s;
+  &:hover {
+    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.5),
+      inset -5px -5px 5px rgba(255, 255, 255, 0.5);
+  }
+`
+
+const StyledText = styled.h1`
+  text-align: center;
+  user-select: none;
+`
 
 function Modal(props) {
   const [buttonColor, setButtonColor] = useState("#f00")
@@ -43,8 +85,8 @@ function Modal(props) {
   }
 
   return (
-    <div id="overlay" onClick={() => props.setIsOpen(false)}>
-      <div
+    <StyledOverlay id="overlay" onClick={() => props.setIsOpen(false)}>
+      <StyledModale
         id="modale"
         style={{
           width: modalWidth,
@@ -52,7 +94,7 @@ function Modal(props) {
           backgroundColor: modalBG,
         }}
       >
-        <h1
+        <StyledText
           id="modalText"
           style={{
             lineHeight: modalHeight,
@@ -61,8 +103,8 @@ function Modal(props) {
           }}
         >
           {props.text ? props.text : "Texte par défaut"}
-        </h1>
-        <button
+        </StyledText>
+        <StyledButton
           id="bouton"
           onClick={() => props.setIsOpen(false)}
           style={{
@@ -70,9 +112,9 @@ function Modal(props) {
           }}
         >
           X
-        </button>
-      </div>
-    </div>
+        </StyledButton>
+      </StyledModale>
+    </StyledOverlay>
   )
 }
 
