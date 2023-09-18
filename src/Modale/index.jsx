@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+
 import { useEffect, useState } from "react"
 import { styled } from "styled-components"
 
@@ -43,8 +44,21 @@ const StyledText = styled.h1`
   text-align: center;
   user-select: none;
 `
-
+/**
+ * Fenêtre modale
+ * @param {function} setIsOpen - Hook gérant l'affichage de la modale
+ * @param {string} buttonColor - Couleur du bouton de fermeture
+ * @param {string} modalWidth - largeur de la fenètre modale
+ * @param {string} modalHeight - Hauteur de la fenêtre modale
+ * @param {string} textColor - Couleur du texte de la modale
+ * @param {string} modalBG - Couleur du fond de la modale
+ * @param {string} textSize - Taille du texte de la modale
+ * @returns component
+ */
 function Modal(props) {
+  /**
+   * Valeurs par défaut
+   */
   const [buttonColor, setButtonColor] = useState("#f00")
   const [modalWidth, setModalWidth] = useState("50%")
   const [modalHeight, setModalHeight] = useState("200px")
@@ -53,6 +67,7 @@ function Modal(props) {
   const [textSize, setTextSize] = useState("3rem")
 
   useEffect(() => {
+    /** Ajout de l'événement "keydown" pour gestion de la touche "Echap" */
     document.addEventListener("keydown", detectKeyDown, true)
 
     if (props.buttonColor) {
@@ -77,9 +92,14 @@ function Modal(props) {
     }
   }, [])
 
+  /**
+   * Fermeture de la modale sur "Echap"
+   * @param {event} e
+   */
   const detectKeyDown = (e) => {
     if (e.key === "Escape" || e.key === "Esc" || e.keyCode === 27) {
       props.setIsOpen(false)
+      /** Retrait de l'event "keydown" */
       document.removeEventListener("keydown", detectKeyDown, true)
     }
   }

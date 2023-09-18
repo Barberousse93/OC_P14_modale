@@ -11,7 +11,7 @@ Une fenêtre modale est, dans une interface graphique, une fenêtre qui prend le
 ## Pré-requis
 
 - Node.js v18.12.0
-- Npm 9.6.7
+- Npm 9.6.7 ou yarb v1.22.19
 - React 18.2.0
 - Styled_components 6.0.8
 
