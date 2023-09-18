@@ -1,7 +1,7 @@
 {
   "name": "modale_by_barberousse",
   "private": false,
-  "version": "0.0.13",
+  "version": "1.0.0",
   "type": "module",
   "description": "Fenêtre modale developpée pour le projet 14 du parcours OPENCLASSROOMS 'Développeur d'application javascript REACT",
   "main": "./dist/modale_by_barberousse.umd.js",
